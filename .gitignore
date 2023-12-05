@@ -1,0 +1,4 @@
+/venv
+.idea
+node_modules
+server/src/static/images/result.jpg

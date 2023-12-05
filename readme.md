@@ -1,0 +1,1 @@
+Pour lancer le projet, aller dans main.py et lancer la dernière condition avec la flèche
