@@ -110,12 +110,11 @@ def index(input_image_path):
                     # Return 400 bad request
                     abort(400, "Selfie is not authorized")
 
-    # Exemple d'utilisation
-    #input_image_path = os.path.join(os.path.dirname(__file__), 'static/images/selfie.jpg')
-    # Supprimer le fichier result.jpg s'il existe
-
     output_image_path = os.path.join(os.path.dirname(__file__), 'static/images/result.jpg')
     detect_and_draw_selfie(input_image_path, output_image_path)
+    # Supprimer le fichier result.jpg s'il existe
+    if os.path.exists(os.path.join(os.path.dirname(__file__), output_image_path)):
+        os.remove(os.path.join(os.path.dirname(__file__), output_image_path))
     # Render index.html
     print('selfie : ' + str(selfie))
     return render_template('index.html', is_selfie=selfie)
